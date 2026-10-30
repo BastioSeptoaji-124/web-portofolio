@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>Bastio Septoaji - Portofolio Mahasiswa Baru Teknik Informatika UNESA 2026</title>
+  <meta name="description" content="Website Portofolio Mahasiswa Baru S1 Teknik Informatika UNESA Angkatan 2026 oleh Bastio Septoaji dengan tema Neo-Brutalist & Y2K Retro Revival." />
+  
+  <!-- Google Fonts: Syne, Space Grotesk, Space Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&family=Syne:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            retroYellow: '#FEF08A',
+            retroPink: '#F43F5E',
+            retroNeonPink: '#EC4899',
+            retroGreen: '#4ADE80',
+            retroMint: '#6EE7B7',
+            retroCyan: '#06B6D4',
+            retroPurple: '#C084FC',
+            retroLilac: '#DDD6FE',
+            retroBlack: '#000000',
+            retroCream: '#FFFBEB',
+            retroDark: '#121212',
+          },
+          fontFamily: {
+            syne: ['Syne', 'sans-serif'],
+            grotesk: ['"Space Grotesk"', 'sans-serif'],
+            mono: ['"Space Mono"', 'monospace'],
+          },
+          boxShadow: {
+            'brutal-sm': '3px 3px 0px #000000',
+            'brutal': '5px 5px 0px #000000',
+            'brutal-lg': '8px 8px 0px #000000',
+            'brutal-xl': '12px 12px 0px #000000',
+            'brutal-hover': '7px 7px 0px #000000',
+            'brutal-active': '1px 1px 0px #000000',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Custom CSS Patterns & Keyframes */
+    body {
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      background-color: #FEF08A;
+      color: #000000;
+      overflow-x: hidden;
+    }
+    
+    .font-syne {
+      font-family: 'Syne', sans-serif;
+    }
+    
+    .font-mono {
+      font-family: 'Space Mono', monospace;
+    }
+
+    /* Motif Background Retro */
+    .bg-retro-dots {
+      background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+      background-size: 18px 18px;
+    }
+
+    .bg-retro-grid {
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+      background-size: 24px 24px;
+    }
+
+    .bg-hazard-stripes {
+      background: repeating-linear-gradient(
+        -45deg,
+        #000000,
+        #000000 10px,
+        #FACC15 10px,
+        #FACC15 20px
+      );
+    }
+
+    /* Retro Window Titlebar */
+    .retro-window-header {
+      background: #000000;
+      color: #FFFFFF;
+      padding: 6px 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: 'Space Mono', monospace;
+      font-weight: bold;
+      font-size: 0.85rem;
+    }
+
+    /* Neo-Brutalist Button Interaction */
+    .btn-brutal {
+      transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+      box-shadow: 5px 5px 0px #000000;
+    }
+    .btn-brutal:hover {
+      transform: translate(-2px, -2px);
+      box-shadow: 7px 7px 0px #000000;
+    }
+    .btn-brutal:active {
+      transform: translate(3px, 3px);
+      box-shadow: 2px 2px 0px #000000;
+    }
+
+    /* Card Hover */
+    .card-brutal {
+      transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    .card-brutal:hover {
+      transform: translate(-3px, -3px);
+      box-shadow: 8px 8px 0px #000000;
+    }
+
+    /* Marquee Animation */
+    @keyframes marqueeAnim {
+      0% { transform: translateX(0%); }
+      100% { transform: translateX(-50%); }
+    }
+    .marquee-track {
+      display: flex;
+      width: 200%;
+      animation: marqueeAnim 20s linear infinite;
+    }
+    .marquee-track:hover {
+      animation-play-state: paused;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 12px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #FEF08A;
+      border-left: 3px solid #000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #F43F5E;
+      border: 3px solid #000;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #06B6D4;
+    }
+  </style>
+</head>
+<body class="bg-retroYellow bg-retro-dots text-black selection:bg-retroPink selection:text-white min-h-screen">
+
+  <!-- ======================================================== -->
+  <!-- BAGIAN 1: HEADER / FLOATING RETRO NAVBAR                 -->
+  <!-- ======================================================== -->
+  <header class="sticky top-4 z-50 px-4 max-w-6xl mx-auto">
+    <nav class="bg-white border-4 border-black shadow-brutal px-4 py-3 md:py-3.5 flex flex-wrap items-center justify-between gap-3 rounded-none">
+      
+      <!-- Logo / Inisial Retro Badge -->
+      <a href="#about" class="flex items-center gap-2 group">
+        <span class="bg-retroPink text-white font-mono font-bold px-2.5 py-1 border-2 border-black shadow-brutal-sm text-sm md:text-base group-hover:rotate-6 transition-transform">
+          &gt;_
+        </span>
+        <span class="font-syne font-black text-xl md:text-2xl tracking-tighter uppercase">
+          BASTIO<span class="text-retroPink">.DEV</span>
+        </span>
+      </a>
+
+      <!-- Menu Navigasi (Smooth Scroll) -->
+      <div class="hidden md:flex items-center gap-2 font-mono text-xs md:text-sm font-bold">
+        <a href="#about" class="px-3 py-1.5 border-2 border-transparent hover:border-black hover:bg-retroMint hover:shadow-brutal-sm transition-all">
+          01.// TENTANG
+        </a>
+        <a href="#skills" class="px-3 py-1.5 border-2 border-transparent hover:border-black hover:bg-retroCyan hover:shadow-brutal-sm transition-all">
+          02.// KEMAMPUAN
+        </a>
+        <a href="#achievement" class="px-3 py-1.5 border-2 border-transparent hover:border-black hover:bg-retroYellow hover:shadow-brutal-sm transition-all">
+          03.// ROADMAP 2026
+        </a>
+        <a href="#contact" class="px-3 py-1.5 border-2 border-transparent hover:border-black hover:bg-retroPurple hover:shadow-brutal-sm transition-all">
+          04.// KONTAK
+        </a>
+      </div>
+
+      <!-- Tombol Aksi Cepat / Status Badge -->
+      <div class="flex items-center gap-2">
+        <div class="hidden lg:flex items-center gap-1.5 bg-retroGreen text-black font-mono font-bold text-xs px-2.5 py-1 border-2 border-black shadow-brutal-sm">
+          <span class="w-2.5 h-2.5 bg-black rounded-none animate-ping"></span>
+          <span>AVAILABLE FOR COLLAB</span>
+        </div>
+
+        <button id="sfx-toggle-btn" title="Nyalakan/Matikan Efek Suara 8-Bit" class="btn-brutal bg-retroYellow text-black border-2 border-black px-2.5 py-1 font-mono text-xs font-bold flex items-center gap-1">
+          <i class="fa-solid fa-volume-high" id="sfx-icon"></i>
+          <span class="hidden sm:inline">SFX: ON</span>
+        </button>
+
+        <a href="#contact" class="btn-brutal bg-black text-white px-3 py-1 font-mono text-xs md:text-sm font-bold border-2 border-black hover:bg-retroPink hover:text-white transition-colors">
+          SAY HI! ✌
+        </a>
+      </div>
+    </nav>
+
+    <!-- Mobile Nav Bar -->
+    <div class="md:hidden flex justify-around bg-black text-white font-mono text-xs font-bold border-x-4 border-b-4 border-black py-2 mt-1 shadow-brutal">
+      <a href="#about" class="hover:text-retroYellow">TENTANG</a>
+      <a href="#skills" class="hover:text-retroCyan">SKILLS</a>
+      <a href="#achievement" class="hover:text-retroGreen">ROADMAP</a>
+      <a href="#contact" class="hover:text-retroPink">KONTAK</a>
+    </div>
+  </header>
+
+  <!-- ======================================================== -->
+  <!-- BAGIAN 2: MARQUEE TICKER (TEKS BERJALAN RETRO 2026)      -->
+  <!-- ======================================================== -->
+  <section class="mt-8 overflow-hidden bg-black text-retroYellow border-y-4 border-black py-2.5 font-mono text-xs md:text-sm font-bold tracking-wider select-none shadow-brutal">
+    <div class="marquee-track whitespace-nowrap">
+      <span class="mx-4">★ BASTIO SEPTOAJI ★</span>
+      <span class="mx-4 text-retroGreen">⚡ INFORMATICS FRESHMAN 2026 UNESA ⚡</span>
+      <span class="mx-4 text-retroPink">★ NIM: 26051204124 ★</span>
+      <span class="mx-4 text-retroCyan">💻 EXPLORING WEB DEV &amp; ALGORITHMS 💻</span>
+      <span class="mx-4 text-retroLilac">★ SYSTEM BOOTED &amp; BUG-FREE ★</span>
+      <span class="mx-4">☕ POWERED BY CAFFEINE &amp; PASSION ★</span>
+      <!-- Loop -->
+      <span class="mx-4">★ BASTIO SEPTOAJI ★</span>
+      <span class="mx-4 text-retroGreen">⚡ INFORMATICS FRESHMAN 2026 UNESA ⚡</span>
+      <span class="mx-4 text-retroPink">★ NIM: 26051204124 ★</span>
+      <span class="mx-4 text-retroCyan">💻 EXPLORING WEB DEV &amp; ALGORITHMS 💻</span>
+      <span class="mx-4 text-retroLilac">★ SYSTEM BOOTED &amp; BUG-FREE ★</span>
+      <span class="mx-4">☕ POWERED BY CAFFEINE &amp; PASSION ★</span>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- HERO BANNER / SAMBUTAN UTAMA RETRO (2026)                -->
+  <!-- ======================================================== -->
+  <section class="max-w-6xl mx-auto px-4 pt-10 pb-6">
+    <div class="relative bg-retroMint border-4 border-black shadow-brutal-lg p-6 md:p-10 overflow-hidden">
+      
+      <div class="absolute -top-3 -right-3 md:top-4 md:right-6 rotate-12 z-10">
+        <div class="bg-retroPink text-white font-syne font-black text-xs md:text-sm px-4 py-1.5 border-3 border-black shadow-brutal uppercase tracking-wider">
+          🔥 FRESHMAN 2026!
+        </div>
+      </div>
+
+      <!-- Window Header Bar Retro -->
+      <div class="retro-window-header -mx-6 -mt-6 md:-mx-10 md:-mt-10 mb-6 border-b-4 border-black flex justify-between items-center bg-black text-white px-4 py-2">
+        <div class="flex items-center gap-2">
+          <i class="fa-solid fa-terminal text-retroGreen"></i>
+          <span>C:\USERS\BASTIO\PORTFOLIO.EXE</span>
+        </div>
+        <div class="flex items-center gap-2">
+          <button class="w-3.5 h-3.5 bg-yellow-400 border border-black inline-block" title="Minimize"></button>
+          <button class="w-3.5 h-3.5 bg-green-400 border border-black inline-block" title="Maximize"></button>
+          <button class="w-3.5 h-3.5 bg-red-500 border border-black inline-block" title="Close"></button>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+        <!-- Teks Pengenalan Hero -->
+        <div class="lg:col-span-8 space-y-4">
+          <div class="inline-flex items-center gap-2 bg-retroYellow text-black border-2 border-black px-3 py-1 font-mono text-xs font-bold shadow-brutal-sm">
+            <i class="fa-solid fa-code text-retroPink"></i>
+            <span>S1 TEKNIK INFORMATIKA • ANGKATAN 2026</span>
+          </div>
+          
+          <h1 class="font-syne font-extrabold text-3xl sm:text-5xl lg:text-6xl uppercase tracking-tight leading-none text-black">
+            HALO! SAYA <br class="hidden sm:inline" />
+            <span class="bg-black text-retroYellow px-2 py-0.5 inline-block shadow-brutal-sm -rotate-1">
+              BASTIO SEPTOAJI
+            </span>
+          </h1>
+
+          <p class="font-grotesk text-base md:text-xl font-medium text-black max-w-2xl leading-relaxed">
+            Mahasiswa Baru S1 Teknik Informatika Universitas Negeri Surabaya (UNESA) Angkatan 2026, lulusan SMA Negeri 1 Kauman, yang siap mengasah kemampuan pemrograman, algoritma sistem, dan rekayasa web modern.
+          </p>
+
+          <div class="pt-2 flex flex-wrap gap-4 items-center font-mono">
+            <a href="#about" class="btn-brutal bg-retroYellow text-black font-bold px-5 py-3 border-3 border-black text-sm flex items-center gap-2">
+              <i class="fa-solid fa-id-card"></i>
+              <span>LIHAT KARTU MAHASISWA</span>
+            </a>
+            <a href="#contact" class="btn-brutal bg-white text-black font-bold px-5 py-3 border-3 border-black text-sm flex items-center gap-2">
+              <i class="fa-solid fa-paper-plane text-retroPink"></i>
+              <span>AJAK NGOBROL / COLLAB</span>
+            </a>
+          </div>
+        </div>
+
+        <!-- Fun Stats Card -->
+        <div class="lg:col-span-4 bg-white border-3 border-black shadow-brutal p-4 space-y-3 font-mono text-xs">
+          <div class="bg-retroLilac border-2 border-black p-2 font-bold flex justify-between items-center">
+            <span>&gt; CURRENT_STATUS</span>
+            <span class="text-retroPink">LEVEL 1 MABA 2026</span>
+          </div>
+          <div class="space-y-1.5 text-black">
+            <div class="flex justify-between border-b border-black/20 pb-1">
+              <span class="text-gray-600">Nama:</span>
+              <span class="font-bold">Bastio Septoaji</span>
+            </div>
+            <div class="flex justify-between border-b border-black/20 pb-1">
+              <span class="text-gray-600">NIM:</span>
+              <span class="font-bold text-retroPink">26051204124</span>
+            </div>
+            <div class="flex justify-between border-b border-black/20 pb-1">
+              <span class="text-gray-600">Kampus:</span>
+              <span class="font-bold">UNESA (Univ. Negeri Surabaya)</span>
+            </div>
+            <div class="flex justify-between border-b border-black/20 pb-1">
+              <span class="text-gray-600">Semester:</span>
+              <span class="font-bold">01 (Ganjil 2026/2027)</span>
+            </div>
+            <div class="flex justify-between pb-1">
+              <span class="text-gray-600">Asal Sekolah:</span>
+              <span class="font-bold">SMA Negeri 1 Kauman</span>
+            </div>
+          </div>
+          <div class="bg-retroYellow border-2 border-black p-2 text-center font-bold">
+            "Eat, Sleep, Code, Debug, Repeat"
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 1: ABOUT ME (KARTU PENGENAL - TANPA FOTO)        -->
+  <!-- ======================================================== -->
+  <section id="about" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="bg-retroPink text-white font-mono font-bold text-lg px-3 py-1 border-3 border-black shadow-brutal-sm">
+        01
+      </span>
+      <h2 class="font-syne font-black text-3xl md:text-5xl uppercase tracking-tight">
+        ABOUT ME // KARTU MAHASISWA
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+      
+      <!-- KARTU PENGENAL RETRO / STUDENT ID CARD -->
+      <div class="lg:col-span-5 bg-retroLilac border-4 border-black shadow-brutal-lg p-5 md:p-6 relative">
+        
+        <div class="w-16 h-4 bg-black mx-auto mb-4 rounded-full border border-gray-600"></div>
+
+        <div class="absolute top-8 right-6 -rotate-12 bg-retroYellow text-black font-mono font-bold text-xs px-2 py-1 border-2 border-black shadow-brutal-sm">
+          ★ MABA 2026 ★
+        </div>
+
+        <div class="text-center pb-4 border-b-3 border-black">
+          <p class="font-mono text-xs font-bold text-gray-700 tracking-widest uppercase">
+            REPUBLIC OF INFORMATICS // STUDENT IDENTITY
+          </p>
+          <h3 class="font-syne font-black text-xl uppercase mt-1">
+            FACULTY OF ENGINEERING
+          </h3>
+        </div>
+
+        <!-- Frame Avatar Retro Digital Monogram (FOTO DIHAPUS) -->
+        <div class="my-5 relative max-w-[220px] mx-auto">
+          <div class="border-4 border-black bg-black p-4 shadow-brutal flex flex-col items-center justify-center text-center aspect-square">
+            <div class="w-16 h-16 bg-retroYellow border-3 border-white flex items-center justify-center text-black font-syne font-black text-2xl shadow-brutal-sm mb-2">
+              BS
+            </div>
+            <div class="font-mono text-xs text-retroGreen font-bold">
+              // BASTIO SEPTOAJI
+            </div>
+            <div class="font-mono text-[10px] text-gray-300 mt-1 uppercase">
+              INFORMATICS MABA 2026
+            </div>
+          </div>
+          <div class="absolute -bottom-3 -right-3 bg-retroPink text-white font-mono font-bold text-xs px-2 py-0.5 border-2 border-black shadow-brutal-sm rotate-6">
+            VERIFIED MABA
+          </div>
+          <div class="absolute -top-3 -left-3 bg-retroYellow text-black font-mono font-bold text-xs px-2 py-0.5 border-2 border-black shadow-brutal-sm -rotate-6">
+            ⚡ CLASS OF 2026
+          </div>
+        </div>
+
+        <!-- Data Pribadi Jelas -->
+        <div class="bg-white border-3 border-black p-4 space-y-2.5 font-mono text-xs md:text-sm">
+          <div>
+            <span class="text-gray-500 block text-[10px] uppercase font-bold tracking-wider">NAMA LENGKAP:</span>
+            <span class="font-bold text-base text-black font-syne">BASTIO SEPTOAJI</span>
+          </div>
+          
+          <div class="grid grid-cols-2 gap-2 pt-1 border-t-2 border-black/15">
+            <div>
+              <span class="text-gray-500 block text-[10px] uppercase font-bold tracking-wider">NIM:</span>
+              <span class="font-bold text-black bg-retroYellow px-1.5 py-0.5 border border-black inline-block">26051204124</span>
+            </div>
+            <div>
+              <span class="text-gray-500 block text-[10px] uppercase font-bold tracking-wider">STATUS:</span>
+              <span class="font-bold text-green-700 bg-retroMint px-1.5 py-0.5 border border-black inline-block">MAHASISWA AKTIF</span>
+            </div>
+          </div>
+
+          <div class="pt-1 border-t-2 border-black/15">
+            <span class="text-gray-500 block text-[10px] uppercase font-bold tracking-wider">PROGRAM STUDI:</span>
+            <span class="font-bold text-black">S1 TEKNIK INFORMATIKA</span>
+          </div>
+
+          <div class="pt-1 border-t-2 border-black/15">
+            <span class="text-gray-500 block text-[10px] uppercase font-bold tracking-wider">KAMPUS:</span>
+            <span class="font-bold text-black">Universitas Negeri Surabaya (UNESA)</span>
+          </div>
+        </div>
+
+        <!-- Barcode Hiasan Retro -->
+        <div class="mt-4 pt-2 text-center border-t-2 border-black">
+          <div class="font-mono text-xs tracking-widest text-black font-bold">||||| | |||| || |||||| | ||||| ||||</div>
+          <p class="font-mono text-[10px] text-gray-700 mt-1">ID NO: TI-UNESA-26051204124</p>
+        </div>
+      </div>
+
+      <!-- DESKRIPSI DIRI & AKTIVITAS & TIMELINE PENDIDIKAN -->
+      <div class="lg:col-span-7 space-y-6">
+        
+        <!-- Bio -->
+        <div class="card-brutal bg-white border-4 border-black p-6 shadow-brutal">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b-3 border-black">
+            <h3 class="font-syne font-black text-xl uppercase flex items-center gap-2">
+              <i class="fa-solid fa-user-astronaut text-retroPink"></i>
+              <span>SIAPA SAYA? // BIO</span>
+            </h3>
+            <span class="font-mono text-xs bg-retroYellow px-2 py-0.5 border border-black font-bold">STORY.TXT</span>
+          </div>
+          
+          <div class="space-y-3 font-grotesk text-sm md:text-base leading-relaxed text-black">
+            <p>
+              Halo semuanya! 👋 Selamat datang di sudut digital saya. Saya adalah <strong>Bastio Septoaji</strong>, Mahasiswa Baru Program Studi <strong>S1 Teknik Informatika di Universitas Negeri Surabaya (UNESA) Angkatan 2026</strong> yang memiliki antusiasme membara terhadap rekayasa perangkat lunak, algoritma pemrograman, dan seni desain web modern.
+            </p>
+            <p>
+              Sebagai lulusan dari <strong>SMA Negeri 1 Kauman</strong>, perjalanan koding saya didorong rasa penasaran melihat bagaimana baris logika dapat bertransformasi menjadi solusi interaktif yang nyata. Di perkuliahan Teknik Informatika UNESA ini, fokus saya adalah memantapkan fondasi algoritma logika, aktif dalam proyek kolaborasi, dan mempersiapkan diri untuk berbagai ajang kompetisi IT.
+            </p>
+            <p class="font-mono text-xs bg-retroCream border-2 border-black p-2.5 font-bold">
+              💡 <em>"Tidak ada kode yang langsung sempurna pada compile pertama; yang terpenting adalah kegigihan untuk membaca trace error dan terus belajar."</em>
+            </p>
+          </div>
+        </div>
+
+        <!-- Aktivitas Saat Ini (2026) -->
+        <div class="card-brutal bg-retroYellow border-4 border-black p-6 shadow-brutal">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b-3 border-black">
+            <h3 class="font-syne font-black text-xl uppercase flex items-center gap-2">
+              <i class="fa-solid fa-laptop-code text-retroBlack"></i>
+              <span>AKTIVITAS SAAT INI</span>
+            </h3>
+            <span class="font-mono text-xs bg-black text-white px-2 py-0.5 font-bold">SEMESTER 1 (2026)</span>
+          </div>
+
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-3 font-mono text-xs">
+            <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+              <div class="font-bold text-retroPink mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-code"></i>
+                <span>MATKUL PEMROGRAMAN DASAR (C++)</span>
+              </div>
+              <p class="text-gray-800 font-grotesk text-xs">
+                Mempelajari sintaks C++, logika percabangan, perulangan, fungsi modular, hingga struktur data dasar array dan pointer.
+              </p>
+            </div>
+
+            <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+              <div class="font-bold text-retroCyan mb-1 flex items-center gap-1.5">
+                <i class="fa-brands fa-react"></i>
+                <span>EXPLORING MODERN WEB DEV</span>
+              </div>
+              <p class="text-gray-800 font-grotesk text-xs">
+                Memperdalam HTML5 semantik, CSS Tailwind modern, JavaScript DOM, dan mulai merancang layout responsif serta portofolio.
+              </p>
+            </div>
+
+            <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+              <div class="font-bold text-green-700 mb-1 flex items-center gap-1.5">
+                <i class="fa-brands fa-git-alt"></i>
+                <span>LINUX &amp; GIT WORKFLOW</span>
+              </div>
+              <p class="text-gray-800 font-grotesk text-xs">
+                Membiasakan diri dengan Terminal bash, push/pull repository GitHub, manajemen cabang, dan instalasi distro Linux.
+              </p>
+            </div>
+
+            <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+              <div class="font-bold text-retroPurple mb-1 flex items-center gap-1.5">
+                <i class="fa-solid fa-users"></i>
+                <span>ORGANISASI &amp; HIMPUNAN</span>
+              </div>
+              <p class="text-gray-800 font-grotesk text-xs">
+                Mengikuti kegiatan kepanitiaan maba, workshop teknologi kampus, dan forum studi kelompok belajar koding bersama teman angkatan 2026.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Riwayat Pendidikan (SMA Negeri 1 Kauman & 2026) -->
+        <div class="card-brutal bg-retroMint border-4 border-black p-6 shadow-brutal">
+          <div class="flex items-center justify-between pb-3 mb-4 border-b-3 border-black">
+            <h3 class="font-syne font-black text-xl uppercase flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap text-black"></i>
+              <span>RIWAYAT PENDIDIKAN</span>
+            </h3>
+            <span class="font-mono text-xs bg-white text-black px-2 py-0.5 border border-black font-bold">TIMELINE</span>
+          </div>
+
+          <div class="space-y-4 font-mono text-xs">
+            <div class="relative pl-6 border-l-4 border-black pb-2">
+              <div class="absolute -left-2.5 top-0 w-4 h-4 bg-retroPink border-2 border-black"></div>
+              <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+                <div class="flex flex-wrap justify-between items-center gap-1 mb-1">
+                  <h4 class="font-syne font-bold text-sm text-black">S1 TEKNIK INFORMATIKA</h4>
+                  <span class="bg-retroGreen text-black px-2 py-0.5 border border-black font-bold">2026 - SEKARANG</span>
+                </div>
+                <p class="text-gray-700 font-semibold">Universitas Negeri Surabaya (UNESA)</p>
+                <p class="font-grotesk text-xs text-gray-600 mt-1">
+                  Fakultas Teknik, Program Studi S1 Teknik Informatika. Mahasiswa Baru Aktif Semester 1 Angkatan 2026.
+                </p>
+              </div>
+            </div>
+
+            <div class="relative pl-6 border-l-4 border-black">
+              <div class="absolute -left-2.5 top-0 w-4 h-4 bg-yellow-400 border-2 border-black"></div>
+              <div class="bg-white border-2 border-black p-3 shadow-brutal-sm">
+                <div class="flex flex-wrap justify-between items-center gap-1 mb-1">
+                  <h4 class="font-syne font-bold text-sm text-black">SMA NEGERI 1 KAUMAN</h4>
+                  <span class="bg-gray-200 text-black px-2 py-0.5 border border-black font-bold">2023 - 2026</span>
+                </div>
+                <p class="text-gray-700 font-semibold">Jurusan Matematika &amp; Ilmu Pengetahuan Alam (MIPA)</p>
+                <p class="font-grotesk text-xs text-gray-600 mt-1">
+                  Menempuh pendidikan tingkat menengah atas dengan fokus sains dan logika matematika, aktif dalam kegiatan sekolah dan lulus pada tahun 2026.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 2: WHAT I CAN DO (SKILLS & TOOLS)                -->
+  <!-- ======================================================== -->
+  <section id="skills" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="bg-retroCyan text-black font-mono font-bold text-lg px-3 py-1 border-3 border-black shadow-brutal-sm">
+        02
+      </span>
+      <h2 class="font-syne font-black text-3xl md:text-5xl uppercase tracking-tight">
+        WHAT I CAN DO // SKILLS &amp; ARSENAL
+      </h2>
+    </div>
+
+    <!-- Bahasa Pemrograman -->
+    <div class="mb-10">
+      <div class="inline-flex items-center gap-2 bg-black text-retroYellow px-3 py-1 font-mono text-xs font-bold border-2 border-black shadow-brutal-sm mb-4">
+        <i class="fa-solid fa-code"></i>
+        <span>BAHASA PEMROGRAMAN &amp; WEB CORE</span>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4">
+        
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-3xl text-[#E34F26]"><i class="fa-brands fa-html5"></i></span>
+              <span class="font-mono text-[10px] font-bold bg-retroMint px-1.5 py-0.5 border border-black">90%</span>
+            </div>
+            <h4 class="font-syne font-extrabold text-lg uppercase">HTML5</h4>
+            <p class="font-grotesk text-xs text-gray-700 mt-1">
+              Semantic structure, accessibility (a11y), clean DOM tree, form controls.
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t-2 border-black font-mono text-[10px] text-gray-600 font-bold">
+            LEVEL: ADVANCED
+          </div>
+        </div>
+
+        <div class="card-brutal bg-[#FEF08A] border-3 border-black p-4 shadow-brutal flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-3xl text-[#1572B6]"><i class="fa-brands fa-css3-alt"></i></span>
+              <span class="font-mono text-[10px] font-bold bg-retroPink text-white px-1.5 py-0.5 border border-black">85%</span>
+            </div>
+            <h4 class="font-syne font-extrabold text-lg uppercase">CSS3 &amp; TAILWIND</h4>
+            <p class="font-grotesk text-xs text-gray-700 mt-1">
+              Flexbox, Grid, Neo-Brutalism styling, keyframe animations, responsive design.
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t-2 border-black font-mono text-[10px] text-gray-600 font-bold">
+            LEVEL: INTERMEDIATE
+          </div>
+        </div>
+
+        <div class="card-brutal bg-[#FFFBEB] border-3 border-black p-4 shadow-brutal flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-3xl text-[#F7DF1E] bg-black px-1"><i class="fa-brands fa-js"></i></span>
+              <span class="font-mono text-[10px] font-bold bg-retroCyan px-1.5 py-0.5 border border-black">80%</span>
+            </div>
+            <h4 class="font-syne font-extrabold text-lg uppercase">JAVASCRIPT</h4>
+            <p class="font-grotesk text-xs text-gray-700 mt-1">
+              ES6+, asynchronous logic, DOM manipulation, Fetch API, LocalStorage.
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t-2 border-black font-mono text-[10px] text-gray-600 font-bold">
+            LEVEL: INTERMEDIATE
+          </div>
+        </div>
+
+        <div class="card-brutal bg-[#DDD6FE] border-3 border-black p-4 shadow-brutal flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-2xl text-black font-mono font-bold bg-white px-1.5 py-0.5 border border-black">C++</span>
+              <span class="font-mono text-[10px] font-bold bg-yellow-300 px-1.5 py-0.5 border border-black">75%</span>
+            </div>
+            <h4 class="font-syne font-extrabold text-lg uppercase">C++ LANGUAGE</h4>
+            <p class="font-grotesk text-xs text-gray-700 mt-1">
+              Matkul Dasar Pemrograman: Looping, Pointer, Struct, OOP dasar, Algoritma logika.
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t-2 border-black font-mono text-[10px] text-gray-600 font-bold">
+            LEVEL: FUNDAMENTAL
+          </div>
+        </div>
+
+        <div class="card-brutal bg-[#BAE6FD] border-3 border-black p-4 shadow-brutal flex flex-col justify-between">
+          <div>
+            <div class="flex justify-between items-start mb-2">
+              <span class="text-3xl text-[#3776AB]"><i class="fa-brands fa-python"></i></span>
+              <span class="font-mono text-[10px] font-bold bg-green-300 px-1.5 py-0.5 border border-black">75%</span>
+            </div>
+            <h4 class="font-syne font-extrabold text-lg uppercase">PYTHON</h4>
+            <p class="font-grotesk text-xs text-gray-700 mt-1">
+              Data structures, automasi skrip sederhana, problem solving, dasar pengolahan data.
+            </p>
+          </div>
+          <div class="mt-4 pt-2 border-t-2 border-black font-mono text-[10px] text-gray-600 font-bold">
+            LEVEL: INTERMEDIATE
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Tools & Workflow -->
+    <div>
+      <div class="inline-flex items-center gap-2 bg-black text-retroCyan px-3 py-1 font-mono text-xs font-bold border-2 border-black shadow-brutal-sm mb-4">
+        <i class="fa-solid fa-toolbox"></i>
+        <span>TOOLS, SOFTWARE &amp; WORKFLOW</span>
+      </div>
+
+      <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+        
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal text-center">
+          <div class="w-12 h-12 mx-auto bg-retroPink text-white border-2 border-black flex items-center justify-center text-2xl shadow-brutal-sm mb-2">
+            <i class="fa-brands fa-github"></i>
+          </div>
+          <h5 class="font-syne font-bold text-sm uppercase">GIT &amp; GITHUB</h5>
+          <p class="font-grotesk text-[11px] text-gray-600 mt-1">Version control &amp; repositori kode kolaboratif.</p>
+        </div>
+
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal text-center">
+          <div class="w-12 h-12 mx-auto bg-retroCyan text-black border-2 border-black flex items-center justify-center text-2xl shadow-brutal-sm mb-2">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h5 class="font-syne font-bold text-sm uppercase">VS CODE</h5>
+          <p class="font-grotesk text-[11px] text-gray-600 mt-1">Primary IDE, snippet, linter, &amp; debug terminal.</p>
+        </div>
+
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal text-center">
+          <div class="w-12 h-12 mx-auto bg-retroYellow text-black border-2 border-black flex items-center justify-center text-2xl shadow-brutal-sm mb-2">
+            <i class="fa-brands fa-linux"></i>
+          </div>
+          <h5 class="font-syne font-bold text-sm uppercase">LINUX &amp; BASH</h5>
+          <p class="font-grotesk text-[11px] text-gray-600 mt-1">Ubuntu WSL &amp; command-line navigation dasar.</p>
+        </div>
+
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal text-center">
+          <div class="w-12 h-12 mx-auto bg-retroPurple text-white border-2 border-black flex items-center justify-center text-2xl shadow-brutal-sm mb-2">
+            <i class="fa-brands fa-figma"></i>
+          </div>
+          <h5 class="font-syne font-bold text-sm uppercase">FIGMA</h5>
+          <p class="font-grotesk text-[11px] text-gray-600 mt-1">Wireframing, UI/UX prototyping, vector assets.</p>
+        </div>
+
+        <div class="card-brutal bg-white border-3 border-black p-4 shadow-brutal text-center col-span-2 sm:col-span-1">
+          <div class="w-12 h-12 mx-auto bg-retroMint text-black border-2 border-black flex items-center justify-center text-2xl shadow-brutal-sm mb-2">
+            <i class="fa-solid fa-book-bookmark"></i>
+          </div>
+          <h5 class="font-syne font-bold text-sm uppercase">NOTION</h5>
+          <p class="font-grotesk text-[11px] text-gray-600 mt-1">Catatan kuliah, roadmap koding, &amp; task manager.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 3: ROADMAP & TARGET PRESTASI MABA 2026           -->
+  <!-- (SERTIFIKAT LAMA DIHAPUS, DIGANTI ROADMAP MABA REALISTIS)-->
+  <!-- ======================================================== -->
+  <section id="achievement" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="bg-retroGreen text-black font-mono font-bold text-lg px-3 py-1 border-3 border-black shadow-brutal-sm">
+        03
+      </span>
+      <h2 class="font-syne font-black text-3xl md:text-5xl uppercase tracking-tight">
+        MILESTONES &amp; TARGET PRESTASI 2026
+      </h2>
+    </div>
+
+    <!-- Banner Penjelasan Status Maba 2026 -->
+    <div class="bg-white border-4 border-black shadow-brutal p-6 mb-8 relative">
+      <div class="flex flex-col md:flex-row items-start md:items-center justify-between gap-4 border-b-2 border-black pb-4 mb-4">
+        <div class="flex items-center gap-3">
+          <span class="w-10 h-10 bg-retroYellow border-2 border-black flex items-center justify-center text-xl font-bold shadow-brutal-sm">
+            🚀
+          </span>
+          <div>
+            <h3 class="font-syne font-black text-lg md:text-xl uppercase">
+              STATUS: INITIATION STAGE // MABA ANGKATAN 2026
+            </h3>
+            <p class="font-mono text-xs text-gray-600">
+              Sebagai Mahasiswa Baru S1 Teknik Informatika UNESA, sertifikat kejuaraan tingkat perguruan tinggi sedang dalam proses perjuangan &amp; persiapan kompetisi.
+            </p>
+          </div>
+        </div>
+        <div class="bg-black text-retroGreen font-mono text-xs px-3 py-1.5 font-bold border border-black whitespace-nowrap">
+          ROADMAP: AKTIF 2026/2027
+        </div>
+      </div>
+      <p class="font-grotesk text-sm text-gray-800 leading-relaxed">
+        Fokus utama saat ini adalah menguasai fundamental pemrograman C++, arsitektur sistem, dan web development untuk siap bersaing dalam ajang bergengsi mahasiswa nasional. Berikut target pencapaian yang sedang dipersiapkan:
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+      <!-- Target 1: Gemastik & Hackathon -->
+      <div class="card-brutal bg-white border-4 border-black shadow-brutal flex flex-col justify-between overflow-hidden">
+        <div>
+          <div class="bg-black text-white px-3 py-1.5 font-mono text-xs font-bold flex justify-between items-center">
+            <span>TARGET_01.EXE</span>
+            <span class="text-retroYellow">★ KOMPETISI NASIONAL</span>
+          </div>
+
+          <div class="p-5 bg-retroYellow border-b-3 border-black text-center space-y-2">
+            <div class="w-16 h-16 mx-auto bg-black text-retroYellow border-2 border-black flex items-center justify-center text-2xl font-black shadow-brutal-sm">
+              <i class="fa-solid fa-rocket text-2xl text-retroYellow"></i>
+            </div>
+            <h4 class="font-syne font-black text-base uppercase">GEMASTIK &amp; HACKATHON</h4>
+            <span class="inline-block bg-black text-white px-2 py-0.5 font-mono text-[10px] font-bold">
+              TARGET: 2026 / 2027
+            </span>
+          </div>
+
+          <div class="p-4 space-y-2 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="bg-retroMint text-black px-2 py-0.5 border border-black font-bold">DIVISI: WEB &amp; UX</span>
+              <span class="text-gray-600 font-bold">PUSPRESNAS</span>
+            </div>
+            <p class="font-grotesk text-xs text-gray-700 leading-relaxed pt-1">
+              Membentuk tim bersama rekan sesama mahasiswa Teknik Informatika UNESA untuk mengikuti Pagelaran Mahasiswa Nasional Bidang TIK (Gemastik) dan Hackathon kampus.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 pt-0">
+          <div class="w-full bg-retroMint text-black font-mono text-xs font-bold py-2 border-2 border-black flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>ONGOING PREPARATION</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Target 2: Sertifikasi Kompetensi Internasional -->
+      <div class="card-brutal bg-white border-4 border-black shadow-brutal flex flex-col justify-between overflow-hidden">
+        <div>
+          <div class="bg-black text-white px-3 py-1.5 font-mono text-xs font-bold flex justify-between items-center">
+            <span>TARGET_02.EXE</span>
+            <span class="text-retroMint">★ INDUSTRY SKILL</span>
+          </div>
+
+          <div class="p-5 bg-retroLilac border-b-3 border-black text-center space-y-2">
+            <div class="w-16 h-16 mx-auto bg-black text-retroLilac border-2 border-black flex items-center justify-center text-2xl font-black shadow-brutal-sm">
+              <i class="fa-solid fa-shield-halved text-2xl text-retroLilac"></i>
+            </div>
+            <h4 class="font-syne font-black text-base uppercase">SERTIFIKASI PROFESIONAL</h4>
+            <span class="inline-block bg-black text-white px-2 py-0.5 font-mono text-[10px] font-bold">
+              TARGET: 2026 / 2027
+            </span>
+          </div>
+
+          <div class="p-4 space-y-2 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="bg-retroYellow text-black px-2 py-0.5 border border-black font-bold">FOKUS: WEB &amp; CLOUD</span>
+              <span class="text-gray-600 font-bold">GLOBAL CERT</span>
+            </div>
+            <p class="font-grotesk text-xs text-gray-700 leading-relaxed pt-1">
+              Menuntaskan sertifikasi pengembang perangkat lunak resmi dari platform industri (Google Bangkit Foundation, Dicoding, atau AWS) untuk memvalidasi keahlian coding.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 pt-0">
+          <div class="w-full bg-retroYellow text-black font-mono text-xs font-bold py-2 border-2 border-black flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>ONGOING PREPARATION</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Target 3: PKM & Riset Mahasiswa -->
+      <div class="card-brutal bg-white border-4 border-black shadow-brutal flex flex-col justify-between overflow-hidden">
+        <div>
+          <div class="bg-black text-white px-3 py-1.5 font-mono text-xs font-bold flex justify-between items-center">
+            <span>TARGET_03.EXE</span>
+            <span class="text-retroPink">★ KREATIVITAS MAHASISWA</span>
+          </div>
+
+          <div class="p-5 bg-retroGreen border-b-3 border-black text-center space-y-2">
+            <div class="w-16 h-16 mx-auto bg-black text-retroGreen border-2 border-black flex items-center justify-center text-2xl font-black shadow-brutal-sm">
+              <i class="fa-solid fa-award text-2xl text-retroGreen"></i>
+            </div>
+            <h4 class="font-syne font-black text-base uppercase">PKM KARSA CIPTA (PKM-KC)</h4>
+            <span class="inline-block bg-black text-white px-2 py-0.5 font-mono text-[10px] font-bold">
+              TARGET: 2026 / 2027
+            </span>
+          </div>
+
+          <div class="p-4 space-y-2 font-mono text-xs">
+            <div class="flex justify-between items-center">
+              <span class="bg-retroPink text-white px-2 py-0.5 border border-black font-bold">SIMBELMAWA</span>
+              <span class="text-gray-600 font-bold">KEMENDIKBUD</span>
+            </div>
+            <p class="font-grotesk text-xs text-gray-700 leading-relaxed pt-1">
+              Menyusun proposal inovasi teknologi terapan bersama dosen pembimbing Teknik Informatika UNESA untuk pendanaan riset prototipe perangkat lunak solutif.
+            </p>
+          </div>
+        </div>
+
+        <div class="p-4 pt-0">
+          <div class="w-full bg-retroPink text-white font-mono text-xs font-bold py-2 border-2 border-black flex items-center justify-center gap-1.5">
+            <i class="fa-solid fa-bullseye"></i>
+            <span>ONGOING PREPARATION</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- SECTION 4: CONTACT & COLLABORATION (KOTAK PESAN RETRO)   -->
+  <!-- ======================================================== -->
+  <section id="contact" class="max-w-6xl mx-auto px-4 py-12">
+    <div class="flex items-center gap-3 mb-8">
+      <span class="bg-retroPink text-white font-mono font-bold text-lg px-3 py-1 border-3 border-black shadow-brutal-sm">
+        04
+      </span>
+      <h2 class="font-syne font-black text-3xl md:text-5xl uppercase tracking-tight">
+        GET IN TOUCH // KOTAK PESAN RETRO
+      </h2>
+    </div>
+
+    <!-- Retro Window Dialog Box -->
+    <div class="bg-white border-4 border-black shadow-brutal-xl overflow-hidden">
+      
+      <div class="retro-window-header border-b-4 border-black px-4 py-2 flex justify-between items-center bg-black text-white">
+        <div class="flex items-center gap-2">
+          <span class="w-3 h-3 bg-retroPink inline-block border border-white"></span>
+          <span class="font-mono text-xs md:text-sm font-bold">MESSAGE_DISPATCHER_V1.EXE — [COMMS ACTIVE]</span>
+        </div>
+        <div class="flex items-center gap-1 text-xs">
+          <span class="px-2 py-0.5 bg-gray-800 border border-gray-600">_</span>
+          <span class="px-2 py-0.5 bg-gray-800 border border-gray-600">□</span>
+          <span class="px-2 py-0.5 bg-red-600 text-white border border-gray-600 font-bold">✕</span>
+        </div>
+      </div>
+
+      <div class="p-6 md:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-start bg-retroCream bg-retro-grid">
+        
+        <!-- Kolom Kiri: Ajakan, Sosial Media, dan Tombol Download CV -->
+        <div class="lg:col-span-5 space-y-6">
+          <div class="space-y-3">
+            <div class="inline-block bg-retroYellow text-black border-2 border-black px-3 py-1 font-mono text-xs font-bold shadow-brutal-sm">
+              📬 MARI BERKOLABORASI
+            </div>
+            
+            <h3 class="font-syne font-black text-2xl md:text-3xl uppercase leading-tight">
+              PUNYA IDE PROJEK ATAU INGIN NGOBROL KODINGAN?
+            </h3>
+            
+            <p class="font-grotesk text-sm text-gray-700 leading-relaxed">
+              Sebagai mahasiswa baru Teknik Informatika UNESA Angkatan 2026, saya selalu bersemangat membuka obrolan baru, bertukar wawasan tentang teknologi, berkolaborasi dalam tugas kelompok, maupun persiapan tim kompetisi!
+            </p>
+          </div>
+
+          <!-- Tombol Download CV Mencolok (2026) -->
+          <div class="p-4 bg-retroYellow border-3 border-black shadow-brutal space-y-3">
+            <div class="flex items-center gap-2 font-mono text-xs font-bold text-black">
+              <i class="fa-solid fa-file-pdf text-retroPink text-lg"></i>
+              <span>RESUME &amp; CURRICULUM VITAE (2026)</span>
+            </div>
+            <p class="font-grotesk text-xs text-gray-800">
+              Unduh ringkasan profil resmi, riwayat pendidikan SMA Negeri 1 Kauman &amp; UNESA, serta kontak lengkap:
+            </p>
+            <button id="download-cv-btn" onclick="handleDownloadCV()" class="btn-brutal w-full bg-retroPink text-white font-syne font-black py-3 border-3 border-black uppercase text-sm flex items-center justify-center gap-2 shadow-brutal hover:bg-black transition-colors">
+              <i class="fa-solid fa-download"></i>
+              <span>DOWNLOAD CV / RESUME (.TXT)</span>
+            </button>
+          </div>
+
+          <!-- Tombol-tombol Sosial Media Tebal -->
+          <div class="space-y-3">
+            <h4 class="font-mono text-xs font-bold uppercase text-gray-800">
+              HUBUNGI SAYA VIA SOCIAL NETWORK:
+            </h4>
+            <div class="flex flex-col gap-2.5 font-mono text-xs font-bold">
+              
+              <!-- Email -->
+              <a href="mailto:26051204124@mhs.unesa.ac.id" class="btn-brutal bg-white hover:bg-retroMint text-black border-2 border-black p-2.5 flex items-center justify-between">
+                <span class="flex items-center gap-2">
+                  <i class="fa-solid fa-envelope text-retroPink text-base"></i>
+                  <span>EMAIL: 26051204124@mhs.unesa.ac.id</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+
+              <!-- GitHub -->
+              <a href="https://github.com/bastioseptoaji" target="_blank" rel="noopener noreferrer" class="btn-brutal bg-white hover:bg-retroCyan text-black border-2 border-black p-2.5 flex items-center justify-between">
+                <span class="flex items-center gap-2">
+                  <i class="fa-brands fa-github text-black text-base"></i>
+                  <span>GITHUB: github.com/bastioseptoaji</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+
+              <!-- LinkedIn -->
+              <a href="https://linkedin.com/in/bastioseptoaji" target="_blank" rel="noopener noreferrer" class="btn-brutal bg-white hover:bg-retroLilac text-black border-2 border-black p-2.5 flex items-center justify-between">
+                <span class="flex items-center gap-2">
+                  <i class="fa-brands fa-linkedin text-[#0A66C2] text-base"></i>
+                  <span>LINKEDIN: linkedin.com/in/bastioseptoaji</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+
+              <!-- Instagram -->
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="btn-brutal bg-white hover:bg-yellow-200 text-black border-2 border-black p-2.5 flex items-center justify-between">
+                <span class="flex items-center gap-2">
+                  <i class="fa-brands fa-instagram text-retroPink text-base"></i>
+                  <span>INSTAGRAM: @bastio.septoaji</span>
+                </span>
+                <i class="fa-solid fa-arrow-up-right-from-square text-xs"></i>
+              </a>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- Formulir Pesan Singkat Retro -->
+        <div class="lg:col-span-7 bg-white border-3 border-black p-6 shadow-brutal">
+          <div class="flex items-center justify-between border-b-2 border-black pb-3 mb-5">
+            <h4 class="font-syne font-black text-lg uppercase flex items-center gap-2">
+              <i class="fa-solid fa-pen-to-square text-retroPink"></i>
+              <span>KIRIM PESAN LANGSUNG</span>
+            </h4>
+            <span class="font-mono text-[10px] bg-retroGreen text-black px-2 py-0.5 border border-black font-bold">DIRECT_SEND</span>
+          </div>
+
+          <form id="retro-contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 font-mono text-xs">
+            <div>
+              <label for="form-name" class="block font-bold text-black uppercase mb-1">
+                NAMA ANDA / PANGGILAN: <span class="text-retroPink">*</span>
+              </label>
+              <input 
+                type="text" 
+                id="form-name" 
+                required
+                placeholder="Contoh: Budi Santoso"
+                class="w-full bg-retroCream border-2 border-black p-3 font-grotesk text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-black shadow-brutal-sm"
+              />
+            </div>
+
+            <div>
+              <label for="form-email" class="block font-bold text-black uppercase mb-1">
+                EMAIL ANDA: <span class="text-retroPink">*</span>
+              </label>
+              <input 
+                type="email" 
+                id="form-email" 
+                required
+                placeholder="nama@email.com"
+                class="w-full bg-retroCream border-2 border-black p-3 font-grotesk text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-black shadow-brutal-sm"
+              />
+            </div>
+
+            <div>
+              <label for="form-subject" class="block font-bold text-black uppercase mb-1">
+                SUBJEK / TOPIK:
+              </label>
+              <select 
+                id="form-subject"
+                class="w-full bg-retroCream border-2 border-black p-3 font-grotesk text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-black shadow-brutal-sm"
+              >
+                <option value="Tanya-tanya Perkuliahan & Maba 2026">Tanya-tanya Perkuliahan &amp; Maba 2026</option>
+                <option value="Ajak Kolaborasi Projek Coding">Ajak Kolaborasi Projek Coding</option>
+                <option value="Diskusi Web Dev / C++">Diskusi Web Dev / C++</option>
+                <option value="Ngobrol Santai / Networking">Ngobrol Santai / Networking</option>
+              </select>
+            </div>
+
+            <div>
+              <label for="form-message" class="block font-bold text-black uppercase mb-1">
+                ISI PESAN: <span class="text-retroPink">*</span>
+              </label>
+              <textarea 
+                id="form-message" 
+                rows="4" 
+                required
+                placeholder="Tulis pesan atau sapaan untuk Bastio di sini..."
+                class="w-full bg-retroCream border-2 border-black p-3 font-grotesk text-sm focus:outline-none focus:bg-white focus:ring-2 focus:ring-black shadow-brutal-sm resize-y"
+              ></textarea>
+            </div>
+
+            <button 
+              type="submit" 
+              id="submit-btn"
+              class="btn-brutal w-full bg-black text-retroYellow font-syne font-black text-sm uppercase py-3.5 border-3 border-black shadow-brutal hover:bg-retroGreen hover:text-black flex items-center justify-center gap-2"
+            >
+              <i class="fa-solid fa-paper-plane"></i>
+              <span>TRANSMIT MESSAGE NOW // KIRIM</span>
+            </button>
+          </form>
+
+          <div id="form-success-alert" class="hidden mt-4 bg-retroGreen border-3 border-black p-4 shadow-brutal font-mono text-xs">
+            <div class="flex items-center gap-2 font-bold text-black mb-1">
+              <i class="fa-solid fa-circle-check text-lg"></i>
+              <span>PESAN BERHASIL DIKIRIM (STATUS 200 OK)!</span>
+            </div>
+            <p class="font-grotesk text-xs text-black">
+              Terima kasih sudah menyapa! Notifikasi telah masuk dan saya akan membalas via email sesegera mungkin.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================================== -->
+  <!-- BAGIAN 5: FOOTER RETRO (2026)                            -->
+  <!-- ======================================================== -->
+  <footer class="mt-16 bg-black text-white border-t-4 border-black">
+    <div class="h-3 w-full bg-hazard-stripes"></div>
+
+    <div class="max-w-6xl mx-auto px-4 py-8">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 pb-6 border-b-2 border-gray-800">
+        
+        <div class="flex items-center gap-3">
+          <span class="bg-retroPink text-white font-mono font-bold px-2 py-1 border-2 border-white text-sm">
+            &gt;_
+          </span>
+          <div>
+            <h4 class="font-syne font-bold text-lg text-white">BASTIO SEPTOAJI</h4>
+            <p class="font-mono text-xs text-gray-400">S1 Teknik Informatika • UNESA • NIM: 26051204124 • Angkatan 2026</p>
+          </div>
+        </div>
+
+        <div class="bg-gray-900 border-2 border-white p-2 font-mono text-xs flex items-center gap-3 shadow-brutal-sm">
+          <span class="text-retroGreen font-bold flex items-center gap-1">
+            <i class="fa-solid fa-sparkles"></i> VISITOR COUNT:
+          </span>
+          <div class="flex gap-1">
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">2</span>
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">6</span>
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">0</span>
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">5</span>
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">1</span>
+            <span class="bg-black text-retroYellow px-1.5 py-0.5 border border-gray-700 font-bold">2</span>
+          </div>
+        </div>
+
+        <a href="#" class="btn-brutal bg-retroYellow text-black font-mono text-xs font-bold px-3 py-1.5 border-2 border-black flex items-center gap-1.5">
+          <i class="fa-solid fa-arrow-up"></i>
+          <span>BACK TO TOP</span>
+        </a>
+      </div>
+
+      <div class="pt-6 flex flex-col md:flex-row items-center justify-between gap-4 font-mono text-xs text-gray-400">
+        <div>
+          &copy; 2026 <span class="text-white font-bold">Bastio Septoaji</span>. All Rights Reserved.
+        </div>
+        
+        <div class="flex items-center gap-2 bg-gray-900 px-3 py-1 border border-gray-700 text-retroMint">
+          <i class="fa-solid fa-mug-hot"></i>
+          <span>Powered by Caffeine, Stack Overflow, and Ctrl+Z</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- JAVASCRIPT: EFEK SUARA, FORMULIR, & RESUME GENERATOR -->
+  <script>
+    let audioCtx = null;
+    let sfxEnabled = true;
+
+    function initAudio() {
+      if (!audioCtx) {
+        audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+      }
+    }
+
+    function play8BitBeep(freq = 440, type = 'square', duration = 0.08) {
+      if (!sfxEnabled) return;
+      try {
+        initAudio();
+        if (audioCtx.state === 'suspended') {
+          audioCtx.resume();
+        }
+        const osc = audioCtx.createOscillator();
+        const gain = audioCtx.createGain();
+        osc.type = type;
+        osc.frequency.setValueAtTime(freq, audioCtx.currentTime);
+        
+        gain.gain.setValueAtTime(0.12, audioCtx.currentTime);
+        gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + duration);
+
+        osc.connect(gain);
+        gain.connect(audioCtx.destination);
+
+        osc.start();
+        osc.stop(audioCtx.currentTime + duration);
+      } catch (e) {
+        console.warn('Audio effect error:', e);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('button, a, input, select, textarea').forEach(el => {
+        el.addEventListener('click', () => {
+          play8BitBeep(520, 'square', 0.06);
+        });
+      });
+
+      const sfxBtn = document.getElementById('sfx-toggle-btn');
+      const sfxIcon = document.getElementById('sfx-icon');
+      if (sfxBtn) {
+        sfxBtn.addEventListener('click', (e) => {
+          e.stopPropagation();
+          sfxEnabled = !sfxEnabled;
+          if (sfxEnabled) {
+            sfxBtn.innerHTML = '<i class="fa-solid fa-volume-high"></i> <span class="hidden sm:inline">SFX: ON</span>';
+            sfxBtn.classList.remove('bg-gray-300');
+            sfxBtn.classList.add('bg-retroYellow');
+            play8BitBeep(660, 'triangle', 0.1);
+          } else {
+            sfxBtn.innerHTML = '<i class="fa-solid fa-volume-xmark"></i> <span class="hidden sm:inline">SFX: OFF</span>';
+            sfxBtn.classList.remove('bg-retroYellow');
+            sfxBtn.classList.add('bg-gray-300');
+          }
+        });
+      }
+    });
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      play8BitBeep(880, 'sine', 0.2);
+
+      const submitBtn = document.getElementById('submit-btn');
+      const successAlert = document.getElementById('form-success-alert');
+
+      if (submitBtn) {
+        submitBtn.innerHTML = '<i class="fa-solid fa-spinner fa-spin"></i> TRANSMITTING...';
+        submitBtn.disabled = true;
+      }
+
+      setTimeout(() => {
+        if (submitBtn) {
+          submitBtn.innerHTML = '<i class="fa-solid fa-check"></i> TRANSMITTED!';
+          submitBtn.classList.remove('bg-black', 'text-retroYellow');
+          submitBtn.classList.add('bg-retroGreen', 'text-black');
+        }
+        if (successAlert) {
+          successAlert.classList.remove('hidden');
+        }
+        play8BitBeep(1050, 'triangle', 0.25);
+
+        document.getElementById('retro-contact-form').reset();
+
+        setTimeout(() => {
+          if (submitBtn) {
+            submitBtn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> <span>TRANSMIT MESSAGE NOW // KIRIM</span>';
+            submitBtn.disabled = false;
+            submitBtn.classList.remove('bg-retroGreen', 'text-black');
+            submitBtn.classList.add('bg-black', 'text-retroYellow');
+          }
+        }, 5000);
+      }, 700);
+    }
+
+    function handleDownloadCV() {
+      play8BitBeep(600, 'square', 0.15);
+      
+      const cvText = `=====================================================
+CURRICULUM VITAE - MAHASISWA BARU TEKNIK INFORMATIKA
+=====================================================
+
+1. DATA PRIBADI
+- Nama Lengkap    : Bastio Septoaji
+- NIM             : 26051204124
+- Program Studi   : S1 Teknik Informatika
+- Fakultas        : Fakultas Teknik
+- Universitas     : Universitas Negeri Surabaya (UNESA)
+- Angkatan        : 2026 / 2027
+- Email           : 26051204124@mhs.unesa.ac.id
+- GitHub          : https://github.com/bastioseptoaji
+- LinkedIn        : https://linkedin.com/in/bastioseptoaji
+
+2. RINGKASAN PROFIL
+Saya adalah Bastio Septoaji, Mahasiswa Baru S1 Teknik Informatika di
+Universitas Negeri Surabaya (UNESA) Angkatan 2026. Memiliki antusiasme
+tinggi terhadap rekayasa perangkat lunak, algoritma pemrograman, dan
+pengembangan web modern. Siap belajar dengan cepat, beradaptasi dengan
+teknologi mutakhir, dan siap berkolaborasi dalam proyek inovatif serta
+kompetisi mahasiswa.
+
+3. KEAHLIAN & TEKNOLOGI
+- Bahasa Pemrograman : C++, JavaScript (ES6+), Python, HTML5, CSS3
+- Framework & Style  : Tailwind CSS, Neo-Brutalism, Responsive Web Design
+- Tools & Software   : Git & GitHub, VS Code, Linux (Ubuntu/Bash), Figma, Notion
+
+4. RIWAYAT PENDIDIKAN
+- 2026 - Sekarang : S1 Teknik Informatika - Universitas Negeri Surabaya (UNESA)
+- 2023 - 2026     : SMA Negeri 1 Kauman (Jurusan MIPA / IPA)
+
+5. TARGET & ROADMAP PENCAPAIAN KAMPUS (2026/2027)
+- Mempersiapkan diri untuk Kompetisi Mahasiswa Bidang TIK (Gemastik)
+- Mengikuti Hackathon & Lomba Desain Web Nasional
+- Mengambil Sertifikasi Kompetensi Internasional Software Engineering
+- Berpartisipasi aktif dalam Program Kreativitas Mahasiswa (PKM)
+
+=====================================================
+Generated from Retro Revival Portfolio | ${new Date().toLocaleDateString('id-ID')}
+=====================================================`;
+
+      const blob = new Blob([cvText], { type: 'text/plain;charset=utf-8' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'CV_Bastio_Septoaji_Informatika_UNESA.txt';
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      URL.revokeObjectURL(url);
+    }
+  </script>
+</body>
+</html>

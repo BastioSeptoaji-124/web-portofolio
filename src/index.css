@@ -1,0 +1,129 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+    color: #000000;
+    background-color: #FEF08A;
+  }
+
+  h1, h2, h3, .font-syne {
+    font-family: 'Syne', 'Space Grotesk', sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'Space Mono', monospace;
+  }
+}
+
+/* Retro Background Patterns */
+.bg-retro-dots {
+  background-image: radial-gradient(#000000 1.5px, transparent 1.5px);
+  background-size: 18px 18px;
+}
+
+.bg-retro-grid {
+  background-image: 
+    linear-gradient(to right, rgba(0, 0, 0, 0.12) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.12) 1px, transparent 1px);
+  background-size: 24px 24px;
+}
+
+.bg-retro-checker {
+  background-color: #fef08a;
+  background-image: 
+    linear-gradient(45deg, rgba(0,0,0,0.06) 25%, transparent 25%), 
+    linear-gradient(-45deg, rgba(0,0,0,0.06) 25%, transparent 25%), 
+    linear-gradient(45deg, transparent 75%, rgba(0,0,0,0.06) 75%), 
+    linear-gradient(-45deg, transparent 75%, rgba(0,0,0,0.06) 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+}
+
+.bg-hazard-stripes {
+  background: repeating-linear-gradient(
+    -45deg,
+    #000000,
+    #000000 12px,
+    #FACC15 12px,
+    #FACC15 24px
+  );
+}
+
+/* Neo-Brutalist Hard Drop Shadows */
+.brutal-shadow {
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.brutal-shadow-sm {
+  box-shadow: 3px 3px 0px #000000;
+}
+
+.brutal-shadow-lg {
+  box-shadow: 8px 8px 0px #000000;
+}
+
+.brutal-shadow-xl {
+  box-shadow: 12px 12px 0px #000000;
+}
+
+.brutal-btn {
+  transition: all 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 5px 5px 0px #000000;
+}
+
+.brutal-btn:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 7px 7px 0px #000000;
+}
+
+.brutal-btn:active {
+  transform: translate(3px, 3px);
+  box-shadow: 2px 2px 0px #000000;
+}
+
+.brutal-card {
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.brutal-card:hover {
+  transform: translate(-3px, -3px) rotate(-0.5deg);
+  box-shadow: 8px 8px 0px #000000;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Marquee infinite scroll */
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  display: flex;
+  width: 200%;
+  animation: marquee 22s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Custom Retro Scrollbar */
+::-webkit-scrollbar {
+  width: 12px;
+}
+::-webkit-scrollbar-track {
+  background: #FEF08A;
+  border-left: 3px solid #000;
+}
+::-webkit-scrollbar-thumb {
+  background: #EC4899;
+  border: 3px solid #000;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #06B6D4;
+}
